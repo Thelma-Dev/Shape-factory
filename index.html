@@ -10,14 +10,45 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Thelma Osifo</title>
+        <title>Shape Factory</title>
         <link rel="shortcut icon" href="assets/img/favicon.png?v=2" type="image/x-icon">
         <link rel="stylesheet" href="assets/style/style.css" media="screen">
         <script src="assets/script/index.js" type="module"></script>
     </head>
     <body>
         <main>
-           
+            <h1>Shape Factory</h1>
+
+            <div class="boxes">
+                <div class="box">
+                    <select id="shape">
+                        <option value="shape" selected hidden>Shape</option>
+                        <option value="circle">Circle</option>
+                        <option value="square">Square</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <select id="color">
+                        <option value="color" selected hidden>Color</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="orange">Orange</option>
+                        <option value="purple">Purple</option>
+                        <option value="pink">Pink</option>
+                    </select>
+                </div>
+                <div class="button">
+                    <button class="create">Create</button>
+                </div> 
+            </div>
+
+            <div class="factory">
+                
+            </div>
+
+            <div class="output">
+                <p></p>
+            </div>
         </main>
     </body>
 </html>
