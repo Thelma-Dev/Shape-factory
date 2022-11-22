@@ -3,6 +3,7 @@
 :root {
     --app-dark-bg:#1a1d28;
     --app-red: #cc231e;
+    --app-red-hover: #c0120c;
     --app-blue:#3c57ff;
     --app-green-hover: #049e51;
     --app-light-green: #04a856;
@@ -13,9 +14,121 @@
 body {
     background-color: var(--app-dark-bg);
     height: 100vh;
+    overflow: hidden;
 }
 
 .container {
     width: min(100% - 30px, 1080px);
     margin-inline: auto;
+}
+
+main {
+    padding: 20px 0;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    color: #f2f4f6;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 600px;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+.content.disable .column{
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.box select {
+    width: 180px;
+    height: 46px;
+    padding: 0 10px;
+    border: none;
+    justify-content: space-between;
+    outline: none;
+    color: #f2f4f6;
+    background-color: rgba(49, 53, 66, 0.9);
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button {
+    width: 140px;
+    height: 46px;
+    text-align: center;
+    background-color: var(--app-red);
+    border: none;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--app-red-hover);
+}
+
+
+.factory {
+    width: 820px;
+    height: 420px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(110px, 1fr));
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    gap: 15px;
+    display: grid;
+    transform: rotate(180deg);
+    background-color: rgba(49, 53, 66, 0.9);
+    border-radius: 5px;
+}
+
+.circle {
+    border-radius: 50%;
+    border: none;
+    width: 100px;
+    height: 100px;
+}
+
+.square {
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 100px;
+}
+
+.output {
+    margin-top: 10px;
+    width: 350px;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 4px;
+    background-color: rgb(0 0 0 / 0.6);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2) inset, -1px -1px 1px 0 rgba(255, 255, 255, 0.1) inset;
+    text-align: center;
+}
+
+.output p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #f2f4f6;
+    line-height: 52px;
+    cursor: default;
 }
