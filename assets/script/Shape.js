@@ -3,8 +3,8 @@
 class Shape {
 
     constructor(name, color) {
-        this.name = name;
-        this.color = color;
+        this._name = name;
+        this._color = color;
     }
 
     getName() {
@@ -16,8 +16,7 @@ class Shape {
     }
 
     getInfo() {
-        this.getName();
-        this.getColor();
+        return `${this._color} ${this._name}`;
     }
 }
 

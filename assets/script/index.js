@@ -24,72 +24,67 @@ const output = select('.output p');
 const array = []
 
 
-function createShape(name, color) {
-    const shape = new Shape(name, color);
+onEvent('click', create, function() {
+
     let shapeOption = getElement("shape");
     let shapeValue = shapeOption.options[shapeOption.selectedIndex].value;
-    let shapes = document.createElement('div');
+    let colorOption = getElement("color");
+    let colorValue = colorOption.options[colorOption.selectedIndex].value;
+    let htmlShape = document.createElement('div');
+    let shape = new Shape(shapeValue, colorValue);
 
-    shapes.setAttribute('onclick', 'getInfo(this)');
-    array.push(shapes);
-
-    // let text = shapes.getAttribute('className');
-    // console.log(text);
+    if(validateLimit()) {
+        array.push(shape);
+    }        
 
 
    if(shapeValue === 'circle') {
-    shapes.classList.add("circle"); 
+    htmlShape.classList.add("circle"); 
    } else {
-    shapes.classList.add("square"); 
+    htmlShape.classList.add("square"); 
    }
-
-
-    let colorOption = getElement("color");
-    let colorValue = colorOption.options[colorOption.selectedIndex].value;
 
     switch (colorValue) {
         case "blue":
-            shapes.style.backgroundColor = '#09f';
+            htmlShape.style.backgroundColor = '#09f';
             break; 
         case "green":
-            shapes.style.backgroundColor = '#9f0';
+            htmlShape.style.backgroundColor = '#9f0';
             break;
         case "orange":
-            shapes.style.backgroundColor = '#f90';
+            htmlShape.style.backgroundColor = '#f90';
             break;
         case "purple":
-            shapes.style.backgroundColor = '#90f';
+            htmlShape.style.backgroundColor = '#90f';
             break;
         case "pink":
-            shapes.style.backgroundColor = '#f09';
+            htmlShape.style.backgroundColor = '#f09';
     } 
-
-    return shapes;
-}
-
-
-function shapeAppend() {
-    factory.append(createShape());
-}
-
-onEvent('click', create, function() {
-    console.log(createShape());
-    shapeAppend();
-    validateLimit();
-})
+    factory.append(htmlShape);
+    printInfo(htmlShape, shape);
+    
+    return shape;
+});
 
 function validateLimit() {
 
     let numberOfShapes = factory.children.length
-    if(numberOfShapes === 15) {
+    if(numberOfShapes === 14) {
         create.disabled = true;
         output.innerText = 'Storage is full!';
+        return false;
     }
+
+    return true;
 }
 
-function printInfo(name, color) {
-
-}
+function printInfo(htmlShape, obj) {
+    console.log(htmlShape, obj, obj.getInfo());
+    htmlShape.addEventListener('click', () => {
+        console.log(array.indexOf(obj) + 1);
+        output.innerText= `Unit ${array.indexOf(obj) + 1}: ${obj.getInfo()}`; 
+    });
+ }
 
 
 
