@@ -30,8 +30,11 @@ function createShape(name, color) {
     let shapeValue = shapeOption.options[shapeOption.selectedIndex].value;
     let shapes = document.createElement('div');
 
-    shapes.setAttribute('onclick', 'printInfo(this)');
+    shapes.setAttribute('onclick', 'getInfo(this)');
     array.push(shapes);
+
+    // let text = shapes.getAttribute('className');
+    // console.log(text);
 
 
    if(shapeValue === 'circle') {
@@ -78,10 +81,14 @@ onEvent('click', create, function() {
 function validateLimit() {
 
     let numberOfShapes = factory.children.length
-    if(numberOfShapes === 21) {
+    if(numberOfShapes === 15) {
         create.disabled = true;
         output.innerText = 'Storage is full!';
     }
+}
+
+function printInfo(name, color) {
+
 }
 
 

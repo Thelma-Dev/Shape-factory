@@ -86,7 +86,7 @@ button:hover {
 
 
 .factory {
-    width: 820px;
+    width: 600px;
     height: 420px;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(110px, 1fr));
@@ -120,7 +120,7 @@ button:hover {
     height: 50px;
     padding: 0 15px;
     border-radius: 4px;
-    background-color: rgb(0 0 0 / 0.6);
+    background-color:none;
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2) inset, -1px -1px 1px 0 rgba(255, 255, 255, 0.1) inset;
     text-align: center;
 }
