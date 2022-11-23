@@ -33,11 +33,13 @@ onEvent('click', create, function() {
     let htmlShape = document.createElement('div');
     let shape = new Shape(shapeValue, colorValue);
 
+    // To validate limited number of shapes created after each push
     if(validateLimit()) {
         array.push(shape);
     }        
 
 
+    // To create the shape based on selected option
    if(shapeValue === 'circle') {
     htmlShape.classList.add("circle"); 
    } else {
@@ -60,9 +62,8 @@ onEvent('click', create, function() {
         case "pink":
             htmlShape.style.backgroundColor = '#f09';
     } 
-    factory.append(htmlShape);
+    factory.append(htmlShape);          // Append the shape to the factory
     printInfo(htmlShape, shape);
-    
     return shape;
 });
 
@@ -80,11 +81,13 @@ function validateLimit() {
 
 function printInfo(htmlShape, obj) {
     console.log(htmlShape, obj, obj.getInfo());
+
+    // To display shape position and information when shape is clicked
     htmlShape.addEventListener('click', () => {
         console.log(array.indexOf(obj) + 1);
         output.innerText= `Unit ${array.indexOf(obj) + 1}: ${obj.getInfo()}`; 
     });
- }
+}
 
 
 
