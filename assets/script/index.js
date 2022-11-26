@@ -34,6 +34,7 @@ onEvent('click', create, function() {
     let shape = new Shape(shapeValue, colorValue);
 
     // To validate limited number of shapes created after each push
+
     if(validateLimit()) {
         array.push(shape);
     }        
@@ -81,6 +82,7 @@ function validateLimit() {
 
 function printInfo(htmlShape, obj) {
     console.log(htmlShape, obj, obj.getInfo());
+    
 
     // To display shape position and information when shape is clicked
     htmlShape.addEventListener('click', () => {
