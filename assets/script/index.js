@@ -34,7 +34,6 @@ onEvent('click', create, function() {
     let shape = new Shape(shapeValue, colorValue);
 
     // To validate limited number of shapes created after each push
-
     if(validateLimit()) {
         array.push(shape);
     }        
@@ -63,14 +62,14 @@ onEvent('click', create, function() {
         case "pink":
             htmlShape.style.backgroundColor = '#f09';
     } 
-    factory.append(htmlShape);          // Append the shape to the factory
+    factory.append(htmlShape);     // Append the shape to the factory
     printInfo(htmlShape, shape);
     return shape;
 });
 
 function validateLimit() {
 
-    let numberOfShapes = factory.children.length
+    let numberOfShapes = factory.childElementCount
     if(numberOfShapes === 14) {
         create.disabled = true;
         output.innerText = 'Storage is full!';
@@ -81,12 +80,9 @@ function validateLimit() {
 }
 
 function printInfo(htmlShape, obj) {
-    console.log(htmlShape, obj, obj.getInfo());
     
-
     // To display shape position and information when shape is clicked
     htmlShape.addEventListener('click', () => {
-        console.log(array.indexOf(obj) + 1);
         output.innerText= `Unit ${array.indexOf(obj) + 1}: ${obj.getInfo()}`; 
     });
 }

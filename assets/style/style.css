@@ -132,3 +132,51 @@ button:hover {
     line-height: 52px;
     cursor: default;
 }
+
+/* ----------------------------------- */
+/*          Media queries             */
+/* --------------------------------- */
+
+@media (max-width: 500px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .boxes {
+        padding: 10px 8px;
+        width: 380px;
+        border: none;
+        justify-content: space-between;
+    }
+
+    .box select {
+        width: 120px;
+        padding: 0 10px;
+        border: none;
+    }
+
+    button {
+        width: 90px;
+    }
+
+    .factory {
+        width: 400px;
+        height: 700px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(110px, 1fr));
+        border: none;
+        margin-top: 10px;
+        padding: 15px 25px;
+        gap: 15px;
+        display: grid;
+        transform: rotate(180deg);
+        background-color: rgba(49, 53, 66, 0.9);
+        border-radius: 5px;
+    }
+
+    .output {
+        width: 300px;
+    }
+
+}
