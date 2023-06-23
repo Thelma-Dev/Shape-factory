@@ -17,37 +17,38 @@
     </head>
     <body>
         <main>
-            <h1>Shape Factory</h1>
-
-            <div class="boxes">
-                <div class="box">
-                    <select id="shape">
-                        <option value="shape" selected hidden>Shape</option>
-                        <option value="circle">Circle</option>
-                        <option value="square">Square</option>
-                    </select>
+            <div class="shape-factory-container">
+                <h1>Shape Factory</h1>
+                <div class="boxes">
+                    <div class="box">
+                        <select id="shape">
+                            <option value="shape" selected hidden>Shape</option>
+                            <option value="circle">Circle</option>
+                            <option value="square">Square</option>
+                        </select>
+                    </div>
+                    <div class="box">
+                        <select id="color">
+                            <option value="color" selected hidden>Color</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="orange">Orange</option>
+                            <option value="purple">Purple</option>
+                            <option value="pink">Pink</option>
+                        </select>
+                    </div>
+                    <div class="button">
+                        <button class="create">Create</button>
+                    </div> 
                 </div>
-                <div class="box">
-                    <select id="color">
-                        <option value="color" selected hidden>Color</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                        <option value="orange">Orange</option>
-                        <option value="purple">Purple</option>
-                        <option value="pink">Pink</option>
-                    </select>
+    
+                <div class="factory">
+                    
                 </div>
-                <div class="button">
-                    <button class="create">Create</button>
-                </div> 
-            </div>
-
-            <div class="factory">
-                
-            </div>
-
-            <div class="output">
-                <p></p>
+    
+                <div class="output">
+                    <p></p>
+                </div>
             </div>
         </main>
     </body>

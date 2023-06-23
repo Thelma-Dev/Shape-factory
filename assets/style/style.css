@@ -23,6 +23,7 @@ body {
 }
 
 main {
+    height: 100vh;
     padding: 20px 0;
     display: grid;
     place-items: center;
@@ -115,6 +116,7 @@ button:hover {
 }
 
 .output {
+    margin-inline: auto;
     margin-top: 10px;
     width: 350px;
     height: 50px;
