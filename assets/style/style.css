@@ -63,6 +63,7 @@ h1 {
     background-color: rgba(49, 53, 66, 0.9);
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 button {
@@ -76,7 +77,7 @@ button {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.2px;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.35s ease-in-out;
     color: #fff;
     cursor: pointer;
 }
@@ -87,6 +88,15 @@ button:hover {
 
 button:disabled {
     background-color: #ca3b36;
+    pointer-events: none;
+}
+
+.clear-button {
+    background-color: #ffa500;
+}
+
+.clear-button:hover {
+    background-color: #e29404;
 }
 
 .factory {
@@ -109,6 +119,7 @@ button:disabled {
     border: none;
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 
 .square {
@@ -116,6 +127,7 @@ button:disabled {
     border: none;
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 
 .output {

@@ -25,16 +25,34 @@ const array = []
 
 
 onEvent('click', create, function() {
+    if(create.innerHTML === "Create") {
+        CreateShape();
+    }
+    else {
+        ClearStorage();
+    }
+});
 
+function ClearStorage() {
+    location.reload();
+}
+
+function CreateShape() {
     let shapeOption = getElement("shape");
     let shapeValue = shapeOption.options[shapeOption.selectedIndex].value;
     let colorOption = getElement("color");
     let colorValue = colorOption.options[colorOption.selectedIndex].value;
 
     if(shapeValue !== "" && colorValue !=="") {
+        output.innerText = "";
         let htmlShape = document.createElement('div');
         let shape = new Shape(shapeValue, colorValue);    
 
+        // To validate limited number of shapes created after each push
+        if(validateLimit()) {
+            array.push(shape);
+            factory.append(htmlShape);     // Append the shape to the factory
+        }   
 
         // To create the shape based on selected option
         shapeValue === 'circle' ? htmlShape.classList.add("circle"): htmlShape.classList.add("square"); 
@@ -56,24 +74,22 @@ onEvent('click', create, function() {
             case "pink":
                 htmlShape.style.backgroundColor = '#f09';
         } 
-
-        // To validate limited number of shapes created after each push
-        if(validateLimit()) {
-            array.push(shape);
-            factory.append(htmlShape);     // Append the shape to the factory
-        }   
        
         printInfo(htmlShape, shape);
         return shape;
+    } 
+    else{
+        output.innerText = "Choose a shape and color";
     }
-});
+}
 
 function validateLimit() {
 
     //let numberOfShapes = factory.childElementCount
     if(array.length === 15) {
-        create.disabled = true;
         output.innerText = 'Storage is full!';
+        create.innerHTML = "Clear";
+        create.classList.add("clear-button");
         return false;
     }
 
