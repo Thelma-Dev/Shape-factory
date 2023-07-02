@@ -85,6 +85,9 @@ button:hover {
     background-color: var(--app-red-hover);
 }
 
+button:disabled {
+    background-color: #ca3b36;
+}
 
 .factory {
     width: 600px;
